@@ -2,6 +2,7 @@
 import React from 'react'
 import { Card, CardContent, Grid, Typography,TextField, Button, Select, MenuItem,FormControl,InputLabel,makeStyles}
  from '@material-ui/core';
+ import FormHelperText from '@material-ui/core/FormHelperText';
 import * as yup from 'yup'
 import{useFormik} from 'formik';
 
@@ -32,7 +33,11 @@ const useStyles = makeStyles({
         color:"#fff",
         border:5,
        borderRadius:8
-    }
+    },
+    helpertext:{
+ color:"red",
+
+    },
   });
 
   //yup validationShema
@@ -118,9 +123,12 @@ const formik = useFormik({
                      onChange={formik.handleChange}
                      error={formik.touched.arrivalDate && Boolean(formik.errors.arrivalDate)}
                      helperText={formik.touched.arrivalDate && formik.errors.arrivalDate}
-                   
+                     
+                     
+                    
                      
                      />
+                
 
                </Grid>
                <Grid  xs={12} sm={6} item>
